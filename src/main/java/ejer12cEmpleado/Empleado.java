@@ -1,10 +1,11 @@
 package ejer12cEmpleado;
+
 /**
  *
  * @author alvaro
  */
 public class Empleado {
-    
+
     private String nombreEmpleado;
     private String apellidoEmpleado;
     private String nifEmpleado;
@@ -16,10 +17,10 @@ public class Empleado {
     private int numHijosEmpleado;
 
     //constructor
-    public Empleado(String nombreEmpleado, String apellidoEmpleado, String nifEmpleado, 
+    public Empleado(String nombreEmpleado, String apellidoEmpleado, String nifEmpleado,
             double sueldoBaseEmpleado, double horaExtraEmpleado, int cantidadHorasExtraAlMesEmpleado,
             int irpfEmpleado, boolean casadoEmpleado, int numHijosEmpleado) {
-        
+
         this.nombreEmpleado = nombreEmpleado;
         this.apellidoEmpleado = apellidoEmpleado;
         this.nifEmpleado = nifEmpleado;
@@ -29,11 +30,9 @@ public class Empleado {
         this.irpfEmpleado = irpfEmpleado;
         this.casadoEmpleado = casadoEmpleado;
         this.numHijosEmpleado = numHijosEmpleado;
-        
-        
+
     }
 
-    
     //get set
     public String getNombreEmpleado() {
         return nombreEmpleado;
@@ -110,16 +109,21 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "\n Nombre= " + nombreEmpleado + "\n Apellidos= " 
+        return "Empleado{" + "\n Nombre= " + nombreEmpleado + "\n Apellidos= "
                 + apellidoEmpleado + "\n NIF= " + nifEmpleado + "\n Sueldo= "
-                + sueldoBaseEmpleado + "\n Horas Extras= " + horaExtraEmpleado 
-                + "\n Cantidad Horas Extra= " + cantidadHorasExtraAlMesEmpleado 
-                + "\n IRPF= " + irpfEmpleado + "\n Casadx= " + casadoEmpleado 
+                + sueldoBaseEmpleado + "\n Horas Extras= " + horaExtraEmpleado
+                + "\n Cantidad Horas Extra= " + cantidadHorasExtraAlMesEmpleado
+                + "\n IRPF= " + irpfEmpleado + "\n Casadx= " + casadoEmpleado
                 + "\n Cantidad Hijos= " + numHijosEmpleado + '}';
     }
 
-    public double calculoHoraExtra(){
-        double resultado=cantidadHorasExtraAlMesEmpleado*horaExtraEmpleado;
+    public double calculoHoraExtra() {
+        double resultado = cantidadHorasExtraAlMesEmpleado * horaExtraEmpleado;
+        return resultado;
+    }
+
+    public double calculoSueldoBruto() {
+        double resultado = sueldoBaseEmpleado + horaExtraEmpleado;
         return resultado;
     }
 }
