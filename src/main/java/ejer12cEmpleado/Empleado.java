@@ -30,6 +30,7 @@ public class Empleado {
         this.casadoEmpleado = casadoEmpleado;
         this.numHijosEmpleado = numHijosEmpleado;
         
+        
     }
 
     
@@ -117,4 +118,8 @@ public class Empleado {
                 + "\n Cantidad Hijos= " + numHijosEmpleado + '}';
     }
 
+    public double calculoHoraExtra(){
+        double resultado=cantidadHorasExtraAlMesEmpleado*horaExtraEmpleado;
+        return resultado;
+    }
 }
