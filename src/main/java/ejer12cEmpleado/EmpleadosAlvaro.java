@@ -4,7 +4,7 @@ package ejer12cEmpleado;
  *
  * @author alvaro
  */
-public class Empleado {
+public class EmpleadosAlvaro {
 
     private String nombreEmpleado;
     private String apellidoEmpleado;
@@ -17,7 +17,7 @@ public class Empleado {
     private int numHijosEmpleado;
 
     //constructor
-    public Empleado(String nombreEmpleado, String apellidoEmpleado, String nifEmpleado,
+    public EmpleadosAlvaro(String nombreEmpleado, String apellidoEmpleado, String nifEmpleado,
             double sueldoBaseEmpleado, double horaExtraEmpleado, int cantidadHorasExtraAlMesEmpleado,
             int irpfEmpleado, boolean casadoEmpleado, int numHijosEmpleado) {
 
@@ -28,9 +28,12 @@ public class Empleado {
         this.horaExtraEmpleado = horaExtraEmpleado;
         this.cantidadHorasExtraAlMesEmpleado = cantidadHorasExtraAlMesEmpleado;
         this.irpfEmpleado = irpfEmpleado;
+        if(irpfEmpleado<1 || irpfEmpleado>20){
+            System.out.println("El IRPF mo es el correcto");
+        }
         this.casadoEmpleado = casadoEmpleado;
         this.numHijosEmpleado = numHijosEmpleado;
-
+        
     }
 
     //get set
@@ -87,6 +90,9 @@ public class Empleado {
     }
 
     public void setIrpfEmpleado(int irpfEmpleado) {
+        if(irpfEmpleado<1 || irpfEmpleado>20){
+            System.out.println("El IRPF mo es el correcto");
+        }
         this.irpfEmpleado = irpfEmpleado;
     }
 
@@ -107,15 +113,6 @@ public class Empleado {
 
     }
 
-    @Override
-    public String toString() {
-        return "Empleado{" + "\n Nombre= " + nombreEmpleado + "\n Apellidos= "
-                + apellidoEmpleado + "\n NIF= " + nifEmpleado + "\n Sueldo= "
-                + sueldoBaseEmpleado + "\n Horas Extras= " + horaExtraEmpleado
-                + "\n Cantidad Horas Extra= " + cantidadHorasExtraAlMesEmpleado
-                + "\n IRPF= " + irpfEmpleado + "\n Casadx= " + casadoEmpleado
-                + "\n Cantidad Hijos= " + numHijosEmpleado + '}';
-    }
 
     public double calculoHoraExtra() {
         double resultado = cantidadHorasExtraAlMesEmpleado * horaExtraEmpleado;
@@ -125,5 +122,44 @@ public class Empleado {
     public double calculoSueldoBruto() {
         double resultado = sueldoBaseEmpleado + horaExtraEmpleado;
         return resultado;
+    }
+    
+    public double calculoDelIrpf() {
+        int irpf=this.irpfEmpleado-this.numHijosEmpleado;
+        
+        if(this.casadoEmpleado=true){
+            irpf-=2;
+        }
+        return irpf;
+    }
+
+    public double calculoSueldoNeto() {
+        double resultado = this.calculoSueldoBruto()-this.calculoDelIrpf();
+        return resultado;
+    }
+    
+    public void escribirBasicInfo() {
+        System.out.println("Nombre= " + nombreEmpleado + "\n Apellidos= "
+                + apellidoEmpleado + "\n NIF= " + nifEmpleado + "Casado= " + casadoEmpleado
+                + "\n Cantidad Hijos= " + numHijosEmpleado);
+    }
+    
+    public void escribirAllInfo() {
+        System.out.println("Nombre= " + nombreEmpleado + "\n Apellidos= "
+                + apellidoEmpleado + "\n NIF= " + nifEmpleado + "Casado= " + casadoEmpleado
+                + "\n Cantidad Hijos= " + numHijosEmpleado+ "\n Sueldo= "
+                + sueldoBaseEmpleado+ "\n Cantidad Horas Extra= " + cantidadHorasExtraAlMesEmpleado
+                + "\n Calculo sueldo bruto= " + calculoSueldoBruto() + "\n Retención del IRPF" + calculoDelIrpf()
+                + "\n Calculo sueldo neto" + calculoSueldoNeto() );
+    }
+    
+     @Override
+    public String toString() {
+        return "Empleado{" + "\n Nombre= " + nombreEmpleado + "\n Apellidos= "
+                + apellidoEmpleado + "\n NIF= " + nifEmpleado + "\n Sueldo= "
+                + sueldoBaseEmpleado + "\n Horas Extras= " + horaExtraEmpleado
+                + "\n Cantidad Horas Extra= " + cantidadHorasExtraAlMesEmpleado
+                + "\n IRPF= " + irpfEmpleado + "\n Casadx= " + casadoEmpleado
+                + "\n Cantidad Hijos= " + numHijosEmpleado + '}';
     }
 }

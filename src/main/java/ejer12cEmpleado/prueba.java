@@ -7,9 +7,9 @@ package ejer12cEmpleado;
 public class prueba {
 
     public static void main(String[] args) {
-        Empleado prueba;
+        EmpleadosAlvaro prueba;
 
-        prueba = new Empleado("Dorkas", "Blackbood", "28727338H", 165.32, 2.64, 8, 32, true, 8);
+        prueba = new EmpleadosAlvaro("Dorkas", "Blackbood", "28727338H", 165.32, 2.64, 8, 32, true, 8);
         System.out.println(prueba.toString());
         
         //metodo calcular hora
