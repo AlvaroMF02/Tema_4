@@ -21,16 +21,8 @@ public class Cafetera {
         return capacidadMaxima;
     }
 
-    public void setCapacidadMaxima(int capacidadMaxima) {
-        this.capacidadMaxima = capacidadMaxima;
-    }
-
     public int getCantidadActual() {
         return cantidadActual;
-    }
-
-    public void setCantidadActual(int cantidadActual) {
-        this.cantidadActual = cantidadActual;
     }
     
     
@@ -42,6 +34,8 @@ public class Cafetera {
     public double servirTaza(double cantidadAServir){
         
         this.cantidadActual-=cantidadAServir;
+        
+        return this.cantidadActual;
     }
     
 }
