@@ -1,41 +1,88 @@
 package ejer8cCafetera;
 
-/**
- *
- * @author alvaro
- */
-public class Cafetera {
-    private int capacidadMaxima;
-    private int cantidadActual;
 
+//Partes de una clase:
+
+//-DEFINICIÓN
+public class Cafetera {
     
-    //CONSTRUCTOR
-    public Cafetera(int capacidadMaxima, int cantidadActual) {
+//-ATRIBUTOS/CAMPOS
+    private double capacidadMaxima;
+    private double cantidadActual;
+    
+    
+    
+//--CONSTRUCTOR
+    
+    public Cafetera() {
         this.capacidadMaxima=1000;
         this.cantidadActual=0;
     }
-
+          
+    
+    
+    public Cafetera(double capacidadMaxima) {
+        this.capacidadMaxima=capacidadMaxima;
+        if(capacidadMaxima<10){
+            this.capacidadMaxima=10;
+        }
+        this.capacidadMaxima=this.cantidadActual;
+    }
   
     
-    public int getCapacidadMaxima() {
+    public Cafetera(double capacidadMaxima, double cantidadActual) {
+        this.capacidadMaxima=capacidadMaxima;
+        
+        if(capacidadMaxima<10){
+            this.capacidadMaxima=10;
+        }
+        
+        this.cantidadActual=cantidadActual;
+        
+        if(this.cantidadActual>this.capacidadMaxima){
+            this.cantidadActual=this.capacidadMaxima;
+        }
+    }
+    
+    
+    
+//--GETTER Y SETTER
+    public double getCapacidadMaxima() {
         return capacidadMaxima;
     }
 
-    public int getCantidadActual() {
+    public double getCantidadActual() {
         return cantidadActual;
     }
+
     
     
-    public int llenarCafetera(int capacidadMaxima){
-        capacidadMaxima=1000;
-     return capacidadMaxima;
+    
+    
+    
+    
+//-METODOS    
+    public void llenarCafetera(int capacidadMaxima){
+        this.cantidadActual=this.capacidadMaxima;
     }
     
-    public double servirTaza(double cantidadAServir){
+    public void servirTaza(double cantidadAServir){
+        double cantidadPositiva = Math.abs(cantidadAServir); //math hace cualquier cantidad positiva
         
-        this.cantidadActual-=cantidadAServir;
-        
-        return this.cantidadActual;
+        if(cantidadPositiva>this.cantidadActual){
+            this.cantidadActual=0;
+        }else{
+             this.cantidadActual-=cantidadPositiva;
+        }
+    }
+    
+    public void vaciarCafetera(int canti){
+        this.cantidadActual=this.capacidadMaxima;
+    }
+    
+    @Override
+    public String toString() {
+        return "Cafetera{" + "capacidadMaxima=" + capacidadMaxima + ", cantidadActual=" + cantidadActual + '}';
     }
     
 }
