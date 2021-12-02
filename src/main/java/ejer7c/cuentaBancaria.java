@@ -6,7 +6,7 @@ import java.util.Random;
  *
  * @author alvaro
  */
-public class CuentaBancaria {
+public class cuentaBancaria {
 
     private String numCuenta;
     private String nif;
@@ -16,7 +16,7 @@ public class CuentaBancaria {
    
     
     
-    public CuentaBancaria(String numCuenta, String nif, String nombre, double saldoActual, double interesAnual) {
+    public cuentaBancaria(String numCuenta, String nif, String nombre, double saldoActual, double interesAnual) {
         this.numCuenta = numCuenta;
         this.nif = nif;
         this.nombre = nombre;
@@ -29,6 +29,21 @@ public class CuentaBancaria {
         if(this.interesAnual<0 || this.interesAnual>3){
             System.out.println("El interés debe estar entre 0 y 3");
         }
+    }
+
+    public cuentaBancaria(String nif, String nombre, double saldoActual, double interesAnual) {
+        this.nif = nif;
+        this.nombre = nombre;
+        this.saldoActual = saldoActual;
+        this.interesAnual = interesAnual;
+        
+    //numeros random
+        this.nif=RandomStringUtils.randomNumeric(9).toUpperCase();
+        this.nombre=RandomStringUtils.randomNumeric(15).toUpperCase();
+//        this.saldoActual=RandomDoubleUtils.randomNumeric(15).toUpperCase();
+//        this.interesAnual=RandomStringUtils.randomNumeric(15).toUpperCase();
+//        
+        
     }
 
     
@@ -48,11 +63,6 @@ public class CuentaBancaria {
     
     public String getNumCuenta() {
         return numCuenta;
-    }
-
-    public void setNumCuenta(String numCuenta) {
-        this.numCuenta=RandomStringUtils.randomNumeric(15).toUpperCase();
-        this.numCuenta = numCuenta;
     }
 
     public String getNif() {
@@ -91,4 +101,29 @@ public class CuentaBancaria {
         this.interesAnual = interesAnual;
     }
 
+    
+    public double ingresarIntereses(){
+        this.saldoActual = this.saldoActual + (this.interesAnual * this.saldoActual);
+        return this.saldoActual;
+    }
+    
+    public double ingresarDinero(double cantidad){
+        cantidad=12000;
+        this.saldoActual+=cantidad;
+        return this.saldoActual;
+    }
+    
+    public double retirarDinero(double cantidad){
+        cantidad=12000;
+        this.saldoActual-=cantidad;
+        return this.saldoActual;
+    }
+    
+    @Override
+    public String toString() {
+        return "Número de cuenta=" + numCuenta + "\n NIF=" + nif + "\n Nombre=" + nombre + "\n Saldo actual=" + saldoActual + "\n Interés anual=" + interesAnual;
+    }
+
+    
+    
 }
