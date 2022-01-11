@@ -1,4 +1,4 @@
-package ejer4cPuntoGeometrico;
+-package ejer4cPuntoGeometrico;
 
 /**
  *
@@ -17,6 +17,7 @@ public class PuntoGeometrico {
         this.y = y;
     }
     
+    //parametrizado por defecto
     public PuntoGeometrico() {
         this.x = 2;
         this.y = 2;
@@ -24,6 +25,8 @@ public class PuntoGeometrico {
     
     
     //---------------------------------------------------
+    //getter y setter
+    
     public double getX() {
         return x;
     }
