@@ -40,7 +40,7 @@ public class NIF {
            
            int letraDni=divisionNum % 23;
            
-           switch (divisionNum){
+           switch (letraDni){
             
             case 0:
                 letra='T';
@@ -136,18 +136,21 @@ public class NIF {
                 
         }
         }
-         
-           
+
+        return letra;
         
-        
-        
-        
-        return letraDni;
+    }
+
+    @Override
+    public String toString() {
+        return "NIF{" + "letraDni=" + letraDni + ", numeroDni=" + numeroDni + '}';
     }
     
 
     
     public static void main(String[] args) {
+        NIF nif1=new NIF("26510773");
+        System.out.println(nif1.toString());
         
     }
 }
