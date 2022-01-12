@@ -15,120 +15,140 @@ public class NIF {
     
     //-------------------CONSTRUCTOR-------------------
 
-    public NIF(String Dni) {
+    private NIF(String numeroDni) {
         
-        int numeroDni=Integer.parseInt(Dni);
-        
-        
- 
+        this.numeroDni=numeroDni;
+        this.letraDni=calculoDni();
+         
+       
     }
-
+    
     
     //---------------------METODOS---------------------
     
-    private int calculoDni(int numeros){
+    private char calculoDni(){
     
-        int divisionNum=numeros%23;
+        char letra=' ';
+        int comprobacion=numeroDni.length(); //mide la cantidad de caracteres
         
-        switch (divisionNum){
+        
+        if (comprobacion>8){
+            letra=' ';
+        }else{
+            
+           int divisionNum=Integer.parseInt(this.numeroDni);
+           
+           int letraDni=divisionNum % 23;
+           
+           switch (divisionNum){
             
             case 0:
-                letraDni='T';
+                letra='T';
                 break;
                 
             case 1:
-                letraDni='R';
+                letra='R';
                 break;
                 
             case 2:
-                letraDni='W';
+                letra='W';
                 break;
                 
             case 3:
-                letraDni='A';
+                letra='A';
                 break;
                 
             case 4:
-                letraDni='G';
+                letra='G';
                 break;    
             
             case 5:
-                letraDni='M';
+                letra='M';
                 break;
             
             case 6:
-                letraDni='Y';
+                letra='Y';
                 break;
                 
             case 7:
-                letraDni='F';
+                letra='F';
                 break;
                 
             case 8:
-                letraDni='P';
+                letra='P';
                 break;
                 
             case 9:
-                letraDni='D';
+                letra='D';
                 break;    
             
             case 10:
-                letraDni='X';
+                letra='X';
                 break;
                 
             case 11:
-                letraDni='B';
+                letra='B';
                 break;
                 
             case 12:
-                letraDni='N';
+                letra='N';
                 break;
                 
             case 13:
-                letraDni='J';
+                letra='J';
                 break;
                 
             case 14:
-                letraDni='Z';
+                letra='Z';
                 break;    
             
             case 15:
-                letraDni='S';
+                letra='S';
                 break;
             
             case 16:
-                letraDni='Q';
+                letra='Q';
                 break;
                 
             case 17:
-                letraDni='V';
+                letra='V';
                 break;
                 
             case 18:
-                letraDni='H';
+                letra='H';
                 break;
                 
             case 19:
-                letraDni='L';
+                letra='L';
                 break;    
             
             case 20:
-                letraDni='C';
+                letra='C';
                 break;
                 
             case 21:
-                letraDni='K';
+                letra='K';
                 break;
                 
             case 22:
-                letraDni='E';
+                letra='E';
                 break;
                 
         }
+        }
+         
+           
+        
+        
+        
         
         return letraDni;
     }
     
 
-
+    
+    public static void main(String[] args) {
+        
+    }
 }
+
