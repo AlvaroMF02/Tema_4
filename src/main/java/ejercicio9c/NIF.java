@@ -141,9 +141,17 @@ public class NIF {
         
     }
 
+    public char getLetraDni() {
+        return letraDni;
+    }
+
+    public String getNumeroDni() {
+        return numeroDni;
+    }
+
     @Override
     public String toString() {
-        return "NIF{" + "letraDni=" + letraDni + ", numeroDni=" + numeroDni + '}';
+        return letraDni + "-" + numeroDni + '}';
     }
     
 
