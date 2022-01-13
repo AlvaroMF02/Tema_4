@@ -1,4 +1,4 @@
--package ejer4cPuntoGeometrico;
+package ejer4cPuntoGeometrico;
 
 /**
  *

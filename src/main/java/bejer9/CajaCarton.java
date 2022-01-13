@@ -31,11 +31,11 @@ public class CajaCarton {
     
     //Metodos
     
-     public void setPeso(int gramos){
-     
-         
-
-     }
+//     public void setPeso(int gramos){
+//     
+//         
+//
+//     }
     
     
 }

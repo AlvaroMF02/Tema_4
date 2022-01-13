@@ -27,35 +27,35 @@ public class Linea {
    
     //METODOS----------------------------------------------
     
-      public mueveDerecha(int x){
-          
-          
-         
-        return x;
-      }
-    
-      public mueveIzquierda(int x){
-          
-          
-         
-        return x;
-      }
-      
-      
-      public mueveArriba(int y){
-          
-          
-         
-        return y;
-      }
-      
-      
-      public mueveAbajo(int y){
-          
-          
-         
-        return y;
-      }
+//      public mueveDerecha(int x){
+//          
+//          
+//         
+//        return x;
+//      }
+//    
+//      public mueveIzquierda(int x){
+//          
+//          
+//         
+//        return x;
+//      }
+//      
+//      
+//      public mueveArriba(int y){
+//          
+//          
+//         
+//        return y;
+//      }
+//      
+//      
+//      public mueveAbajo(int y){
+//          
+//          
+//         
+//        return y;
+//      }
       
 
       
