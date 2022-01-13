@@ -56,17 +56,24 @@ public class Complejo {
     //-------------METODOS-------------
     //https://www.problemasyecuaciones.com/complejos/sumar-restar-multiplicar-dividir-numeros-complejos-imaginarios-ejemplos-formulas.html
     
-//    private static Complejo suma(Complejo num1, Complejo num2){
-//        double resultado;
-//       resultado=(num1.aReal+num2.aReal , num1.bImaginaria+num2.bImaginaria);
+    private static Complejo suma(Complejo num1, Complejo num2){
+        
+//        Complejo resultado = new Complejo();
 //       
-//       return resultado;
-//    }
-//    
+//       double resultado1=num1.aReal+num2.aReal;
+//       double resultado2=num1.bImaginaria+num2.bImaginaria;
+//       
+//       resultado.setA(resultado1);
+        return (new Complejo(num1.aReal+ num2.aReal, num1.bImaginaria+num2.bImaginaria));
+
+    }
+    
 //    private static Complejo resta(Complejo num1, Complejo num2){
+//        
 //        double resultado;
 //        resultado=(num1.aReal-num2.aReal , num1.bImaginaria-num2.bImaginaria);
 //        
 //        return resultado;
+//        
 //    }
 }
