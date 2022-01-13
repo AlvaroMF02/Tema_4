@@ -64,7 +64,7 @@ public class Complejo {
 //       double resultado2=num1.bImaginaria+num2.bImaginaria;
 //       
 //       resultado.setA(resultado1);
-        return (new Complejo(num1.aReal+ num2.aReal, num1.bImaginaria+num2.bImaginaria));
+        return (new Complejo(num1.aReal+ num2.aReal, num1.bImaginaria+num2.bImaginaria)); //codigo de jesus
 
     }
     
