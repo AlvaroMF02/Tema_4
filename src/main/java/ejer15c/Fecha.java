@@ -41,41 +41,41 @@ public class Fecha {
     
     //-------------------METODOS-------------------
     
-    public void comprobarFecha(int dia, int mes, int anio){
+    static void comprobarFecha(int dia, int mes, int anio){
         if ((dia>31 || dia<1)||(mes>12 || mes<1)||(anio>2022)){
             throw new IllegalArgumentException("fecha incorrecta");
         }
     }
     
     //Para  ver si el año es bisiesto
-    public void bisiesto(LocalDate hoy){
+    static void bisiesto(LocalDate hoy){
         if (hoy.isLeapYear()){
             System.out.println("Este año es bisiesto");
         }
     }
     
     //Devuelve el numero de dias que tiene un mes
-    public void diasMes(LocalDate hoy){
+    static void diasMes(LocalDate hoy){
         System.out.println("Días del mes actual " + hoy.lengthOfMonth());
     }
     
     //Muestra fecha en este formato "02-09-2003"
-    public void mostrarFechaCorta(LocalDate hoy){
+    static void mostrarFechaCorta(LocalDate hoy){
         System.out.println(hoy.getDayOfMonth() +"-"+hoy.getMonthValue()+"-"+hoy.getYear());
     }
     
     //Muestra fecha en este formato "martes 2 de septiembre de 2003"
-    public void mostrarFechaLarga(LocalDate hoy){
+    static void mostrarFechaLarga(LocalDate hoy){
            
     }
     
     //devolverá el día de la semana de la fecha (7 para domingo, 6 para sábado, etc). El 1-1-1900 fue domingo.
-    public void diaSemana(LocalDate hoy){
+    static void diaSemana(LocalDate hoy){
            
     }
     
     //devolverá el número de días entre ambas fechas
-    public void diasEntreFechas(Temporal fecha1, Temporal fecha2){
+    static void diasEntreFechas(Temporal fecha1, Temporal fecha2){
         LocalDate hoy;
         long diferenciaDias = ChronoUnit.DAYS.between(fecha1, fecha2);
         System.out.println("Entre las dos fechas hay " + diferenciaDias+"días");
@@ -83,13 +83,13 @@ public class Fecha {
     }
     
     //Pasa al dia siguiente
-    public void siguiente(LocalDate hoy){
+    static void siguiente(LocalDate hoy){
            LocalDate diaSiguiente = hoy.plus(-1, ChronoUnit.DAYS);
         System.out.println("Dentro de una semana " + diaSiguiente);
     }
     
     //Pasa al dia anterior
-    public void anterior(LocalDate hoy){
+    static void anterior(LocalDate hoy){
            LocalDate diaAnterior = hoy.plus(-1, ChronoUnit.DAYS);
         System.out.println("Dentro de una semana " + diaAnterior);
     }
@@ -102,6 +102,10 @@ public class Fecha {
     }
 
     public void setDia(int dia) {
+        if ((dia>31 || dia<1)){
+            throw new IllegalArgumentException("fecha incorrecta");
+        }
+        
         this.dia = dia;
     }
 
@@ -110,6 +114,9 @@ public class Fecha {
     }
 
     public void setMes(int mes) {
+        if ((mes>12 || mes<1)){
+            throw new IllegalArgumentException("fecha incorrecta");
+        }
         this.mes = mes;
     }
 
@@ -118,6 +125,9 @@ public class Fecha {
     }
 
     public void setAnio(int anio) {
+        if ((anio>2022)){
+            throw new IllegalArgumentException("fecha incorrecta");
+        }
         this.anio = anio;
     }
     
